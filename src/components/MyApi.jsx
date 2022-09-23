@@ -3,6 +3,7 @@ import CardCharacter from "./CardCharacter";
 import { Container, Row, Col, Spinner } from "react-bootstrap";
 import Paginate from "./Paginate";
 import Navigation from "./Navigation";
+import Footer from "./Footer";
 
 const MyApi = () => {
   // hooks
@@ -55,6 +56,9 @@ const MyApi = () => {
                   return character.name
                     .toLowerCase()
                     .includes(search.toLowerCase());
+                }).reverse()
+                  .sort((a,b) =>{
+                    return a.name.length > b.name.length ? 1 : -1 
                 })
                 .map((character) => (
                   <Col key={character.id.toString()} xs={10} md={6} lg={3} className="mx-auto">
@@ -64,6 +68,7 @@ const MyApi = () => {
               <Paginate page={page} setPage={setPage} />
             </Row>
           </Container>
+          <Footer/>
         </>
       )}
     </>

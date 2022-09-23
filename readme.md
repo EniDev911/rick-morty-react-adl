@@ -11,12 +11,21 @@
 
 ---
 
+### VIDEO
+
+
+[![Youtube](public/youtube.png)](https://www.youtube.com/watch?v=6rDv797rEdM)
+
+### ENFOQUE
+
+![draw](public/draw.png)
+
+
 ### SCREENSHOTS
 
 
-![screenshot-1](/public/screenshot-1.png)
-![screenshot-2](/public/screenshot-2.png)
-
+![screenshot-1](public/screenshot-1.png)
+![screenshot-2](public/screenshot-2.png)
 
 
 ### Notas extras:
