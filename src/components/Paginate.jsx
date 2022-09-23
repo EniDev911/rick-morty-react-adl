@@ -9,7 +9,7 @@ useEffect(()=>{
       if(e.key === 'ArrowLeft'){
         page === 1 ? setPage(1) : setPage(page - 1)
         return
-      }else if('ArrowRight'){
+      }else if(e.key === 'ArrowRight'){
         page === 42 ? setPage(42) : setPage(page + 1);
         return;
       }
@@ -24,15 +24,15 @@ useEffect(()=>{
     return (
       <Stack direction="horizontal" gap={2} className="w-100 justify-content-between">
         <Button
-          variant="primary"
+          variant="dark"
           onClick={() => {
             page === 1 ? setPage(1) : setPage(page - 1);
           }}
         >
           Anterior
         </Button>
-        <p className="bg-dark text-light p-2 rounded fs-3">{page}</p>
-        <Button variant="primary" onClick={() => {
+        <p className="bg-dark text-light px-3 rounded-pill fs-3">{page}</p>
+        <Button variant="dark" onClick={() => {
           page === 42 ? setPage(42) : setPage(page + 1)
           }}>
           Siguiente

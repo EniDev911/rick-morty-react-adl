@@ -1,11 +1,10 @@
 import './App.css'
-import Card from './components/CardCharacter'
-import GalleryCharacters from './components/GalleryCharacters'
+import MyApi from './components/MyApi'
 
 function App() {
   return (
-    <div className="App">
-      <GalleryCharacters />
+    <div className="App min-vh-100">
+      <MyApi />
     </div>
   )
 }
