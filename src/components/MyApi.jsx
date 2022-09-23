@@ -31,7 +31,6 @@ const MyApi = () => {
     fetchApi();
   }, [page]);
 
-
   return (
     <>
       {loading ? (
@@ -56,19 +55,26 @@ const MyApi = () => {
                   return character.name
                     .toLowerCase()
                     .includes(search.toLowerCase());
-                }).reverse()
-                  .sort((a,b) =>{
-                    return a.name.length > b.name.length ? 1 : -1 
+                })
+                .reverse()
+                .sort((a, b) => {
+                  return a.name.length > b.name.length ? 1 : -1;
                 })
                 .map((character) => (
-                  <Col key={character.id.toString()} xs={10} md={6} lg={3} className="mx-auto">
+                  <Col
+                    key={character.id.toString()}
+                    xs={10}
+                    md={6}
+                    lg={3}
+                    className="mx-auto"
+                  >
                     <CardCharacter character={character} />
                   </Col>
                 ))}
               <Paginate page={page} setPage={setPage} />
             </Row>
           </Container>
-          <Footer/>
+          <Footer />
         </>
       )}
     </>
