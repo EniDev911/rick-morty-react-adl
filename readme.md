@@ -14,8 +14,8 @@
 ### SCREENSHOTS
 
 
-![screenshot-1](public/screenshot-1.png)
-![screenshot-2](public/screenshot-2.png)
+![screenshot-1](/public/screenshot-1.png)
+![screenshot-2](/public/screenshot-2.png)
 
 
 
