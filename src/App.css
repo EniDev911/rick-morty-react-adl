@@ -10,6 +10,9 @@
   transition: padding .3s ease-in-out;
 }
 
+.popup {
+  background: yellow !important;
+}
 
 @media(hover:hover) {
   .card {
