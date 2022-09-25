@@ -34,6 +34,7 @@ const MyApi = () => {
   return (
     <>
       {loading ? (
+        <Row className="min-vh-100">
         <Col className="my-auto">
           <Spinner animation="grow" role="status" variant="warning" />
           <Spinner
@@ -44,6 +45,7 @@ const MyApi = () => {
           />
           <Spinner animation="grow" role="status" variant="info" />
         </Col>
+        </Row>
       ) : (
         <>
           <Navigation setSearch={setSearch} className="w-100" />
