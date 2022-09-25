@@ -10,7 +10,7 @@ const CardCharacter = ({character}) => {
   const Sw = withReactContent(Swal);
   
   return (
-    <Card bg="dark" className='p-3'>
+    <Card bg="dark" className='p-2'>
       <Card.Img variant="top" 
         src={character.image} 
         className="img-fluid"

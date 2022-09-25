@@ -1,17 +1,16 @@
 const customClass = {
   container: 'bg-dark bg-gradient',
-  image: 'img-fluid',
-  confirmButton: 'btn-warning',
-  popup: 'bg-dark bg-gradient border',
-  confirmButton: 'bg-danger'
+  title: 'fs-3 text-warning',
+  image: 'w-75 rounded-pill border',
+  popup: 'bg-dark bg-gradient border p-0 col-10 col-md-8 col-lg-4',
+  footer: 'bg-dark p-2',
+  confirmButton: 'bg-danger fs-5 p-2'
 }
 
 export const popupConfig = {
-  imageWidth: '100%',
-  width: 300,
   showCloseButton: false,
   customClass: customClass,
-  confirmButtonText: 'cerrar',
-  color: '#ccc'
-
+  showConfirmButton: false, // => confirmButtonText: en caso de cambiarlo a true
+  color: '#ccc',
+  showCloseButton: true
 }

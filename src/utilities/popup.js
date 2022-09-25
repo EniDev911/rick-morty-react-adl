@@ -8,10 +8,23 @@ const showModalCharacter = (Sw, { name, image, origin, status, species }) => {
     ? statusCharacter = "🟢 Vivo"
     : status.toLowerCase() === "dead"
       ? statusCharacter = "🔴 Muerto"
-      : statusCharacter = "👤 Desconocido"
+      : statusCharacter = "❔ Desconocido"
+
   switch (species.toLowerCase()) {
     case "human":
-      tipo = "humano"
+      tipo = "🧑‍🦲humano"
+      break
+    case "mythological creature":
+      tipo = "🔱 criatura mitologica"
+      break
+    case "animal":
+      tipo = "🐾 animal"
+      break
+    case "robot":
+      tipo = "🤖 robot"
+      break
+    case "alien":
+      tipo = "👽 alien"
       break
     default:
       tipo = species
@@ -36,16 +49,17 @@ const showModalCharacter = (Sw, { name, image, origin, status, species }) => {
   Sw.fire({
     ...popupConfig,
     imageUrl: image,
-    title: `<h2>${name}<h2>`,
+    title: `<small class="text-light fs-5">${statusCharacter}</small><br>${name}`,
     html: `
-    <strong>${statusCharacter.toUpperCase()}</strong>
-        <hr>  
-    <h4 class="bg-dark p-1 rounded mb-1" text-light">Origen:<h4>
-      <p class="p-0 fs-5">${placeOrigin}</p>
-    <h4 class="bg-dark p-1 rounded mb-1" text-light">Especie:<h4>
-      <p class="p-0 fs-5">Tipo ${tipo}</p>
+     <hr class="text-warning p-0 m-0">  
+     <h5 class="p-1 rounded text-warning text-uppercase">Origen:<h5>
+      <p class="p-0">${placeOrigin}</p>
+      <h5 class="p-1 rounded text-warning text-uppercase">Tipo:<h5>
+      <p class="p-0 text-capitalize">${tipo}</p>
     `,
   })
 }
+
+
 
 export default showModalCharacter;
