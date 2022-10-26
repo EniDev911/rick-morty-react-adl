@@ -7,10 +7,12 @@ import Footer from "./Footer";
 
 const MyApi = () => {
   // hooks
-  const [characters, setCharacters] = useState([]),
-    [loading, setLoading] = useState(true),
-    [page, setPage] = useState(1),
-    [search, setSearch] = useState("");
+  const [characters, setCharacters] = useState({
+    data: [],
+    loading: true
+  }),
+  [page, setPage] = useState(1),
+  [search, setSearch] = useState("");
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -19,11 +21,13 @@ const MyApi = () => {
           `https://rickandmortyapi.com/api/character?page=${page}`,
           { method: "GET" }
         );
-        const json = await response.json();
-        setCharacters(json.results);
-        setTimeout(() => {
-          setLoading(false);
-        }, 2000);
+        if (response.ok){
+          const json = await response.json();
+            setCharacters({
+            data: json.results,
+            loading: false
+        });
+        }
       } catch (e) {
         console.log(e.message);
       }
@@ -33,9 +37,9 @@ const MyApi = () => {
 
   return (
     <>
-      {loading ? (
-        <Row className="min-vh-100">
-        <Col className="my-auto">
+      {characters.loading ? (
+        <Row className="min-vh-100 text-center">
+        <Col className="m-auto">
           <Spinner animation="grow" role="status" variant="warning" />
           <Spinner
             animation="grow"
@@ -52,7 +56,7 @@ const MyApi = () => {
           <Container className="my-3">
             <Row className="g-4">
               <Paginate page={page} setPage={setPage} />
-              {characters
+              {characters.data
                 .filter((character) => {
                   return character.name
                     .toLowerCase()
