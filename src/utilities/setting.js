@@ -8,7 +8,6 @@ const customClass = {
 }
 
 export const popupConfig = {
-  showCloseButton: false,
   customClass: customClass,
   showConfirmButton: false, // => confirmButtonText: en caso de cambiarlo a true
   color: '#ccc',
